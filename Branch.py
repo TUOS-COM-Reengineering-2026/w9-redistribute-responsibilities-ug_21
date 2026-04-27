@@ -15,3 +15,6 @@ class Branch:
 
     def get_staff(self):
         return self._staff
+
+    def add_staff(self, staff):
+        self.staff.append(staff)

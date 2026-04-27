@@ -41,22 +41,17 @@ class Bank:
         return account.get_balance()
 
     def add_interest(self, account: Account):
-        balance = account.get_balance()
-        interest_rate = account.get_interest_rate()
-        interest = balance * interest_rate
-        account.set_balance(balance + interest)
-
+        account.apply_interest()
+        
     def add_funds(self, account: Account, amount: float):
-        balance = account.get_balance()
-        account.set_balance(balance + amount)
+        account.add_amount(amount)
 
     def close_account(self, account: Account):
-        account.set_customer(None)
-        account.set_balance(0)
+        account.close()
         self.accounts.remove(account)
 
     def add_staff_member(self, branch: Branch, staff: Staff):
-        branch.get_staff().append(staff)
+        branch.add_staff(staff)
 
     def change_opening_time(self, branch: Branch, time: str):
         self.branch_opening_times[branch] = time
