@@ -18,3 +18,9 @@ class Branch:
 
     def add_staff(self, staff):
         self._staff.append(staff)
+
+    def remove_staff(self, staff):
+        self._staff.remove(staff)
+
+    def add_staff(self, staff):
+        self._staff.append(staff)
